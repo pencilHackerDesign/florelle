@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import InquireButton from './InquireButton.astro';
+import { GENERIC_INQUIRE_MESSAGE } from '../lib/whatsapp';
+import scarfRose from '../assets/images/scarf-rose.png';
+---
+<section class="hero">
+  <div class="page hero__grid">
+    <div class="hero__copy">
+      <h1 class="hero__line">
+        Cloth that remembers<br />
+        the <em>leaf</em> that touched it.
+      </h1>
+      <InquireButton message={GENERIC_INQUIRE_MESSAGE} />
+    </div>
+    <figure class="hero__image-wrap">
+      <Image
+        src={scarfRose}
+        alt="A plant-printed scarf draped over a wooden branch, soft pink rose-leaf impressions on cream silk."
+        class="hero__image"
+        widths={[480, 768, 1024, 1440]}
+        sizes="(max-width: 880px) 100vw, 50vw"
+        loading="eager"
+        fetchpriority="high"
+        format="avif"
+      />
+    </figure>
+  </div>
+</section>

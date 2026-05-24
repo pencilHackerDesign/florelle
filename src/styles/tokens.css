@@ -1,0 +1,139 @@
+/* ================================================================
+   Florelle — design tokens
+   Source of truth: /Users/rohankartik/Documents/Claude/Florelle Calude Design v0/florelle.css
+   See also: florelle/engineering.html (CD v2).
+   Tokens are semantic so they map 1:1 to the eventual Shopify theme.
+   ================================================================ */
+
+:root {
+  /* ---------- color: ramps ---------- */
+  /* Parchment — primary surface. Warm cream, like the studio wall. */
+  --c-parchment-50:  #fdfaf3;
+  --c-parchment-100: #f7efe2;   /* base page */
+  --c-parchment-200: #efe3cf;
+  --c-parchment-300: #e2d2b6;
+  --c-parchment-400: #c9b794;
+
+  /* Bone — secondary surface. Quieter than parchment for cards/inset bands. */
+  --c-bone-50:  #fefcf7;
+  --c-bone-100: #f9f4ea;
+  --c-bone-200: #f1eadb;
+  --c-bone-300: #e6dcc4;
+
+  /* Ink — text. Warm near-black with a touch of brown. */
+  --c-ink-100: #5a5347;   /* faint */
+  --c-ink-200: #3f3a31;   /* muted */
+  --c-ink-300: #2a261e;   /* body */
+  --c-ink-400: #1a1812;   /* heading */
+
+  /* Clay — single warm accent. Used for a thin underline, a single mark. */
+  --c-clay-100: #e8c6ad;
+  --c-clay-300: #c08a64;
+  --c-clay-500: #8a5a3a;
+  --c-clay-700: #5e3b25;
+
+  /* Sage — quiet desaturated green, used very sparingly. */
+  --c-sage-100: #d8dfc9;
+  --c-sage-300: #95a07f;
+  --c-sage-500: #5e6b4d;
+
+  /* WhatsApp — only the CTA. Never any other surface. */
+  --c-wa: #25d366;
+  --c-wa-deep: #128c7e;
+
+  /* ---------- semantic ---------- */
+  --bg:               var(--c-parchment-100);
+  --bg-recessed:      var(--c-parchment-50);
+  --surface:          var(--c-bone-50);
+  --surface-card:     var(--c-bone-100);
+  --rule:             rgba(42, 38, 30, 0.10);
+  --rule-strong:      rgba(42, 38, 30, 0.22);
+
+  --text-heading:     var(--c-ink-400);
+  --text-body:        var(--c-ink-300);
+  --text-muted:       var(--c-ink-200);
+  --text-faint:       var(--c-ink-100);
+  --text-on-dark:     var(--c-parchment-50);
+
+  --accent:           var(--c-clay-500);
+  --accent-soft:      var(--c-clay-300);
+
+  --focus:            var(--c-clay-700);
+
+  /* ---------- type ---------- */
+  --font-display: "Newsreader", "Cormorant Garamond", Georgia, serif;
+  --font-body:    "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-mono:    ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Type scale — gentle quartic, optimised for long-form reading. */
+  --t-eyebrow:    0.78rem;
+  --t-body-sm:    0.875rem;
+  --t-body:       1rem;
+  --t-body-lg:    1.125rem;
+  --t-lead:       1.25rem;
+  --t-h4:         1.5rem;
+  --t-h3:         1.875rem;
+  --t-h2:         clamp(2rem, 3.4vw, 3.25rem);
+  --t-h1:         clamp(2.75rem, 5.6vw, 5.5rem);
+  --t-display:    clamp(3.5rem, 8vw, 7.5rem);
+
+  --leading-tight: 1.05;
+  --leading-snug:  1.18;
+  --leading-body:  1.55;
+  --leading-loose: 1.7;
+
+  --track-tight:  -0.02em;
+  --track-normal: 0;
+  --track-wide:   0.08em;
+  --track-eyebrow:0.18em;
+
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+
+  /* ---------- spacing scale (4-based) ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+  --s-11: 160px;
+  --s-12: 200px;
+
+  /* ---------- radius ---------- */
+  --r-none: 0;
+  --r-xs:   2px;
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-pill: 999px;
+
+  /* ---------- motion ---------- */
+  --motion-fast:  160ms cubic-bezier(0.2, 0, 0.2, 1);
+  --motion-base:  240ms cubic-bezier(0.2, 0, 0.2, 1);
+  --motion-slow:  500ms cubic-bezier(0.2, 0, 0.2, 1);
+  --motion-image: 900ms cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---------- layout ---------- */
+  --pad-x-page:   clamp(20px, 5vw, 96px);
+  --max-page:     1440px;
+  --max-prose:    62ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-base: 0ms;
+    --motion-slow: 0ms;
+    --motion-image: 0ms;
+  }
+  *, *::before, *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}

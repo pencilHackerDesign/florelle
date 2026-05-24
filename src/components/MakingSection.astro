@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import scarfSaffron from '../assets/images/scarf-saffron.png';
+---
+<section class="making" aria-labelledby="making-title">
+  <div class="page making__inner">
+    <figure class="making__image-wrap">
+      <Image
+        src={scarfSaffron}
+        alt="A scarf with pressed leaves and small yellow flower marks, hanging in afternoon light."
+        class="making__image"
+        widths={[480, 768, 1024]}
+        sizes="(max-width: 880px) 100vw, 45vw"
+        loading="lazy"
+        format="avif"
+      />
+    </figure>
+    <div class="making__copy">
+      <span class="eyebrow making__eyebrow">The making</span>
+      <h2 id="making-title" class="making__head">The print is the plant itself.</h2>
+      <p class="making__body">
+        We forage leaves and petals close to the studio, with a basket and a name
+        for every plant. They are pressed into cloth still damp, rolled tight, and
+        set with steam over hours. The fabric keeps the print as a kind of memory,
+        faint at the edges, deepest where the leaf lay longest.
+      </p>
+      <p class="making__body">
+        No two pieces leave the studio the same. We finish them by hand and send
+        them on.
+      </p>
+      <p class="making__signoff">— Juhi and Rohan</p>
+    </div>
+  </div>
+</section>

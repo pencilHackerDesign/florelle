@@ -7,11 +7,9 @@ export interface Props {
 }
 
 const {
-  title = 'Florelle — eco-printed textiles & paper, made with care',
-  description = 'Florelle makes plant-printed scarves, t-shirts and paper by hand, using leaves, flowers and roots foraged with care. Pre-order or inquire on WhatsApp.',
+  title = 'Florelle. Plant-printed scarves & tees, made by hand.',
+  description = 'Florelle is a small studio in India making plant-printed scarves and t-shirts. The print is the plant itself, pressed into cloth and steamed over hours.',
 } = Astro.props;
-
-const ogImage = '/og.png';
 ---
 <!doctype html>
 <html lang="en">
@@ -23,24 +21,21 @@ const ogImage = '/og.png';
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f7f1e7" />
+    <meta name="theme-color" content="#f7efe2" />
 
-    <!-- open graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- fonts: serif for headings, neutral sans for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap"
     />
   </head>
-  <body>
+  <body data-screen-label="Florelle Launch Page">
     <a href="#main" class="skip">Skip to content</a>
     <slot />
   </body>
