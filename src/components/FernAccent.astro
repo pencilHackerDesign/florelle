@@ -1,0 +1,58 @@
+---
+// A subtle fern frond used as a decorative motif.
+// Place it inside a `.motif` positioning wrapper.
+export interface Props {
+  width?: number;
+  height?: number;
+  color?: string;
+  rotate?: number;
+  flip?: boolean;
+}
+
+const {
+  width = 220,
+  height = 320,
+  color = '#6f7c5d',
+  rotate = 0,
+  flip = false,
+} = Astro.props;
+
+const transform = `${flip ? 'scale(-1, 1) ' : ''}rotate(${rotate})`;
+---
+<svg
+  width={width}
+  height={height}
+  viewBox="0 0 220 320"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  style={`transform: ${transform};`}
+>
+  <g fill="none" stroke={color} stroke-width="1.4" stroke-linecap="round">
+    <!-- main stem -->
+    <path d="M110 310 C 110 240, 105 160, 100 20" />
+
+    <!-- leaflets, left side, descending in size -->
+    <path d="M100 30 C 80 24, 60 24, 50 30 C 60 38, 80 40, 100 36" fill={color} fill-opacity="0.18" />
+    <path d="M101 50 C 78 44, 56 44, 45 51 C 56 60, 78 62, 101 58" fill={color} fill-opacity="0.18" />
+    <path d="M103 72 C 78 66, 54 66, 42 74 C 54 84, 78 86, 103 80" fill={color} fill-opacity="0.20" />
+    <path d="M105 96 C 78 89, 52 89, 40 98 C 52 109, 78 111, 105 104" fill={color} fill-opacity="0.22" />
+    <path d="M106 122 C 78 114, 50 114, 38 124 C 50 136, 78 138, 106 130" fill={color} fill-opacity="0.24" />
+    <path d="M108 150 C 78 141, 48 141, 36 152 C 48 165, 78 167, 108 158" fill={color} fill-opacity="0.26" />
+    <path d="M109 180 C 78 170, 46 170, 34 182 C 46 196, 78 198, 109 188" fill={color} fill-opacity="0.26" />
+    <path d="M110 212 C 78 200, 44 200, 32 214 C 44 230, 78 232, 110 220" fill={color} fill-opacity="0.24" />
+    <path d="M110 246 C 80 234, 50 234, 40 246 C 50 260, 80 262, 110 252" fill={color} fill-opacity="0.20" />
+    <path d="M110 278 C 86 268, 62 268, 54 278 C 62 290, 86 292, 110 282" fill={color} fill-opacity="0.16" />
+
+    <!-- leaflets, right side -->
+    <path d="M100 30 C 120 24, 140 24, 150 30 C 140 38, 120 40, 100 36" fill={color} fill-opacity="0.18" />
+    <path d="M101 50 C 124 44, 146 44, 157 51 C 146 60, 124 62, 101 58" fill={color} fill-opacity="0.18" />
+    <path d="M103 72 C 128 66, 152 66, 164 74 C 152 84, 128 86, 103 80" fill={color} fill-opacity="0.20" />
+    <path d="M105 96 C 132 89, 158 89, 170 98 C 158 109, 132 111, 105 104" fill={color} fill-opacity="0.22" />
+    <path d="M106 122 C 134 114, 162 114, 174 124 C 162 136, 134 138, 106 130" fill={color} fill-opacity="0.24" />
+    <path d="M108 150 C 138 141, 168 141, 180 152 C 168 165, 138 167, 108 158" fill={color} fill-opacity="0.26" />
+    <path d="M109 180 C 140 170, 170 170, 182 182 C 170 196, 140 198, 109 188" fill={color} fill-opacity="0.26" />
+    <path d="M110 212 C 142 200, 172 200, 184 214 C 172 230, 142 232, 110 220" fill={color} fill-opacity="0.24" />
+    <path d="M110 246 C 140 234, 168 234, 178 246 C 168 260, 140 262, 110 252" fill={color} fill-opacity="0.20" />
+    <path d="M110 278 C 134 268, 156 268, 164 278 C 156 290, 134 292, 110 282" fill={color} fill-opacity="0.16" />
+  </g>
+</svg>
