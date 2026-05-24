@@ -1,0 +1,14 @@
+---
+import MotifLeaf from './MotifLeaf.astro';
+import InquireButton from './InquireButton.astro';
+import { GENERIC_INQUIRE_MESSAGE } from '../lib/whatsapp';
+---
+<header class="site-header">
+  <div class="page site-header__inner">
+    <a href="#main" class="brand" aria-label="Florelle, home">
+      <MotifLeaf />
+      <span class="brand__name">Florelle</span>
+    </a>
+    <InquireButton message={GENERIC_INQUIRE_MESSAGE} ariaLabel="Inquire on WhatsApp" />
+  </div>
+</header>

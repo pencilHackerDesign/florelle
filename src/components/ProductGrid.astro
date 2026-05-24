@@ -1,0 +1,22 @@
+---
+import type { Product } from '../data/products';
+import ProductCard from './ProductCard.astro';
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+---
+<section class="pieces" aria-labelledby="pieces-title">
+  <div class="page">
+    <header class="pieces__head">
+      <span class="eyebrow">The pieces, this season</span>
+      <h2 id="pieces-title" class="pieces__title">Nine, this run.</h2>
+      <p class="pieces__sub">Each one made by hand, finished, and ready to send.</p>
+    </header>
+    <div class="pieces__grid" role="list">
+      {products.map((p) => <ProductCard product={p} />)}
+    </div>
+  </div>
+</section>

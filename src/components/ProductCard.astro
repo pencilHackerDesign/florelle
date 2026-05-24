@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import type { Product } from '../data/products';
+import { resolveImage } from '../lib/product-images';
+import { inquireUrl } from '../lib/whatsapp';
+import InquireButton from './InquireButton.astro';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const cover = product.images[0];
+const src = resolveImage(cover.url);
+---
+<article class="card" role="listitem">
+  <a
+    class="card__image"
+    href={inquireUrl(product.inquireMessage)}
+    aria-label={`Inquire about ${product.title}`}
+  >
+    <Image
+      src={src}
+      alt={cover.altText}
+      widths={[320, 480, 768]}
+      sizes="(max-width: 560px) 100vw, (max-width: 880px) 50vw, 33vw"
+      loading="lazy"
+      format="avif"
+    />
+  </a>
+  <div class="card__body">
+    <div class="card__meta">
+      <h3 class="card__name">{product.title}</h3>
+      <span class="card__material">{product.material}</span>
+    </div>
+    <p class="card__desc">{product.descriptionShort}</p>
+    <InquireButton
+      message={product.inquireMessage}
+      variant="ghost"
+      label="Inquire"
+      ariaLabel={`Inquire about ${product.title} on WhatsApp`}
+      class="card__cta"
+      withGlyph={false}
+    />
+  </div>
+</article>

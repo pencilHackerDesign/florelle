@@ -1,0 +1,32 @@
+---
+import type { OnRequestItem } from '../data/on-request';
+
+interface Props {
+  items: OnRequestItem[];
+}
+
+const { items } = Astro.props;
+---
+<section class="on-request" aria-labelledby="on-request-title">
+  <div class="page on-request__inner">
+    <div>
+      <span class="eyebrow">On request</span>
+      <h2 id="on-request-title" class="on-request__title">
+        Other small things, made on order.
+      </h2>
+      <p class="on-request__lede">
+        Tell us what you'd like. We'll sketch, quote and start when there's a
+        piece of cloth that wants to become it.
+      </p>
+    </div>
+    <ul class="on-request__list">
+      {items.map((item, i) => (
+        <li class="on-request__item">
+          <span class="on-request__num">{String(i + 1).padStart(2, '0')}</span>
+          <span>{item.title}</span>
+          <span class="on-request__hint">{item.hint}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
